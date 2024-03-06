@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('product_bills', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('bill_id');
             $table->date('sale_date');
@@ -20,7 +21,7 @@ return new class extends Migration
 
             $table->foreign('product_id')->references('id')->on('products');
             $table->foreign('bill_id')->references('id')->on('bills');
-            $table->foreign('sale_date')->references('id')->on('bills');
+            
 
             $table->timestamps();
 
