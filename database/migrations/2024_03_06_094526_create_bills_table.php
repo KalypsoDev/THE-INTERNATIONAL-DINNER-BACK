@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->id();
-            $table->id('id_user');
+            $table->id('user_id');
             $table->integer('units_quantity');
             $table->integer('total_sale_price');
             $table->string('status')->default('pending'); 
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
