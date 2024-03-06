@@ -18,13 +18,11 @@ return new class extends Migration
             $table->integer('product_quantity');
             $table->double('price');
 
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('product_id')->references('id')->on('bills');
             $table->foreign('bill_id')->references('id')->on('bills');
             $table->foreign('sale_date')->references('id')->on('bills');
 
             $table->timestamps();
-
-
         });
     }
 
