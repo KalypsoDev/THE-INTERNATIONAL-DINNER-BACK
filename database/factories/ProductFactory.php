@@ -8,7 +8,7 @@ use App\Models\Product;
 use App\Models\Flag;
 use App\Models\Diet;
 use App\Models\FoodAllergen;
-
+use App\Models\User;
 use Faker\Generator as Faker;
 
 $factory->define(Product::class, function (Faker $faker) {
@@ -18,13 +18,13 @@ $factory->define(Product::class, function (Faker $faker) {
         'product_description' => $faker->paragraph,
         'product_price' => $faker->randomFloat(2, 10, 1000),
         'flag_id' => function () {
-            return factory(Flag::class)->create()->id;
+            return User::factory(Flag::class)->create()->id;
         },
         'diet_id' => function () {
-            return factory(Diet::class)->create()->id;
+            return User::factory(Diet::class)->create()->id;
         },
         'allergen_type' => function () {
-            return factory(FoodAllergen::class)->create()->allergen_type;
+            return User::factory(FoodAllergen::class)->create()->allergen_type;
         },
         'status' => $faker->randomElement(['active', 'inactive']),
         
