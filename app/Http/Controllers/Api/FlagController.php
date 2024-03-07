@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 
 class FlagController extends Controller
 {
-   
+
 
     public function index()
     {
@@ -16,7 +16,7 @@ class FlagController extends Controller
         return response()->json($flags);
     }
 
-    
+
 
 
     public function store(Request $request)
@@ -32,7 +32,7 @@ class FlagController extends Controller
         return response()->json($flag, 201);
     }
 
-  
+
 
 
     public function show(Flag $flag)
@@ -40,7 +40,12 @@ class FlagController extends Controller
         return response()->json($flag);
     }
 
-    
+    public function edit(Flag $flag)
+    {
+        return response()->json($flag);
+    }
+
+
 
 
     public function update(Request $request, Flag $flag)
@@ -56,13 +61,12 @@ class FlagController extends Controller
         return response()->json($flag, 200);
     }
 
-   
 
-    
+
+
     public function destroy(Flag $flag)
     {
         $flag->delete();
         return response()->json(null, 204);
     }
 }
-

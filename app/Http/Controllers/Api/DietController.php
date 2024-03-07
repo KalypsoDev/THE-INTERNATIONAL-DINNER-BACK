@@ -8,14 +8,14 @@ use App\Http\Controllers\Controller;
 
 class DietController extends Controller
 {
-   
+
     public function index()
     {
         $diets = Diet::all();
         return response()->json($diets);
     }
 
-   
+
 
     public function store(Request $request)
     {
@@ -30,14 +30,19 @@ class DietController extends Controller
         return response()->json($diet, 201);
     }
 
-    
+
 
     public function show(Diet $diet)
     {
         return response()->json($diet);
     }
 
-   
+    public function edit(Diet $diet)
+    {
+        return response()->json($diet);
+    }
+
+
 
 
     public function update(Request $request, Diet $diet)
@@ -54,7 +59,7 @@ class DietController extends Controller
     }
 
 
-    
+
     public function destroy(Diet $diet)
     {
         $diet->delete();

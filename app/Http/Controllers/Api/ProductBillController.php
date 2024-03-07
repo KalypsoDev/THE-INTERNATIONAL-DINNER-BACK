@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 
 class ProductBillController extends Controller
 {
-   
+
 
     public function index()
     {
@@ -16,7 +16,7 @@ class ProductBillController extends Controller
         return response()->json($productBills);
     }
 
-   
+
 
     public function store(Request $request)
     {
@@ -39,14 +39,19 @@ class ProductBillController extends Controller
         return response()->json($productBill, 201);
     }
 
-   
+
 
     public function show(ProductBill $productBill)
     {
         return response()->json($productBill);
     }
 
-   
+    public function edit(ProductBill $productBill)
+    {
+        return response()->json($productBill);
+    }
+
+
 
 
     public function update(Request $request, ProductBill $productBill)
@@ -70,9 +75,9 @@ class ProductBillController extends Controller
         return response()->json($productBill, 200);
     }
 
-    
 
-    
+
+
     public function destroy(ProductBill $productBill)
     {
         $productBill->delete();
