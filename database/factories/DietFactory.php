@@ -1,23 +1,14 @@
 <?php
 
 namespace Database\Factories;
-
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Diet>
- */
-class DietFactory extends Factory
-{
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
-    {
-        return [
-            //
-        ];
-    }
-}
+use App\Models\Diet;
+use Faker\Generator as Faker;
+
+$factory->define(Diet::class, function (Faker $faker) {
+    return [
+        'diet_type' => $faker->randomElement(['low-carb', 'keto', 'paleo', 'vegan', 'vegetarian', 'gluten-free']),
+
+    ];
+});

@@ -4,20 +4,11 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\flag>
- */
-class flagFactory extends Factory
-{
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
-    {
-        return [
-            //
-        ];
-    }
-}
+use App\Models\Flag;
+use Faker\Generator as Faker;
+
+$factory->define(Flag::class, function (Faker $faker) {
+    return [
+        'country_flag' => $faker->countryCode, 
+    ];
+});
