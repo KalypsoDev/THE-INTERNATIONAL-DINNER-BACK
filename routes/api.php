@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\BillController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/bill', [BillController::class, 'index']);
+Route::post('/bill', [BillController::class, 'store']);
+Route::get('/bill/{bill}', [BillController::class, 'show']);
+Route::put('/bill/{bill}', [BillController::class, 'update']);
+Route::delete('/bill/{bill}', [BillController::class, 'destroy']);
