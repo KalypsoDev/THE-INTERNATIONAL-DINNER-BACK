@@ -8,14 +8,14 @@ use App\Http\Controllers\Controller;
 
 class BillController extends Controller
 {
-    
+
     public function index()
     {
         $bills = Bill::all();
         return response()->json($bills);
     }
 
-   
+
     public function store(Request $request)
     {
         $request->validate([
@@ -35,14 +35,20 @@ class BillController extends Controller
         return response()->json($bill, 201);
     }
 
-    
-   
+
+
     public function show(Bill $bill)
     {
         return response()->json($bill);
     }
 
-  
+
+    public function edit(Bill $bill)
+    {
+        return response()->json($bill);
+    }
+
+
 
 
     public function update(Request $request, Bill $bill)
@@ -58,8 +64,6 @@ class BillController extends Controller
 
         return response()->json($bill, 200);
     }
-
-    
 
 
     public function destroy(Bill $bill)

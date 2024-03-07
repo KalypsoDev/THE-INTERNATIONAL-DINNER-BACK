@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 
 class RoleController extends Controller
 {
-    
+
 
     public function index()
     {
@@ -16,7 +16,7 @@ class RoleController extends Controller
         return response()->json($roles);
     }
 
-   
+
 
     public function store(Request $request)
     {
@@ -33,9 +33,15 @@ class RoleController extends Controller
         return response()->json($role, 201);
     }
 
-  
+
 
     public function show(Role $role)
+    {
+        return response()->json($role);
+    }
+
+
+    public function edit(Role $role)
     {
         return response()->json($role);
     }
@@ -58,7 +64,7 @@ class RoleController extends Controller
     }
 
 
-    
+
     public function destroy(Role $role)
     {
         $role->delete();

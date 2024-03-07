@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
-    
+
 
     public function index()
     {
@@ -16,7 +16,7 @@ class UserController extends Controller
         return response()->json($users);
     }
 
-    
+
 
 
     public function store(Request $request)
@@ -40,14 +40,21 @@ class UserController extends Controller
         return response()->json($user, 201);
     }
 
-   
+
 
     public function show(User $user)
     {
         return response()->json($user);
     }
 
-    
+
+    public function edit(User $user)
+    {
+        return response()->json($user);
+    }
+
+
+
 
     public function update(Request $request, User $user)
     {
@@ -75,8 +82,8 @@ class UserController extends Controller
         return response()->json($user, 200);
     }
 
-  
-    
+
+
     public function destroy(User $user)
     {
         $user->delete();

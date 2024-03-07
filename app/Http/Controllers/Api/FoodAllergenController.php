@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 
 class FoodAllergenController extends Controller
 {
-    
+
 
 
     public function index()
@@ -32,14 +32,19 @@ class FoodAllergenController extends Controller
         return response()->json($foodAllergen, 201);
     }
 
-    
+
 
     public function show(FoodAllergen $foodAllergen)
     {
         return response()->json($foodAllergen);
     }
 
-  
+
+    public function edit(FoodAllergen $foodAllergen)
+    {
+        return response()->json($foodAllergen);
+    }
+
 
     public function update(Request $request, FoodAllergen $foodAllergen)
     {
@@ -55,11 +60,10 @@ class FoodAllergenController extends Controller
     }
 
 
-    
+
     public function destroy(FoodAllergen $foodAllergen)
     {
         $foodAllergen->delete();
         return response()->json(null, 204);
     }
 }
-
