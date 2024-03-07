@@ -2,13 +2,19 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-
 use App\Models\FoodAllergen;
 use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(FoodAllergen::class, function (Faker $faker) {
-    return [
-        'allergen_type' => $faker->word, 
-    ];
-});
+class FoodAllergenFactory extends Factory
+{
+    protected $model = FoodAllergen::class;
+
+    public function definition()
+    {
+        return [
+            'allergen_type' => $this->faker->word,
+            
+        ];
+    }
+}

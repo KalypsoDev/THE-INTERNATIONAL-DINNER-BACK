@@ -2,31 +2,43 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-
 use App\Models\Product;
 use App\Models\Flag;
 use App\Models\Diet;
 use App\Models\FoodAllergen;
-use App\Models\User;
-use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Product::class, function (Faker $faker) {
-    return [
-        'product_name' => $faker->sentence(3),
-        'product_image_url' => $faker->imageUrl(),
-        'product_description' => $faker->paragraph,
-        'product_price' => $faker->randomFloat(2, 10, 1000),
-        'flag_id' => function () {
-            return User::factory(Flag::class)->create()->id;
-        },
-        'diet_id' => function () {
-            return User::factory(Diet::class)->create()->id;
-        },
-        'allergen_type' => function () {
-            return User::factory(FoodAllergen::class)->create()->allergen_type;
-        },
-        'status' => $faker->randomElement(['active', 'inactive']),
-        
-    ];
-});
+class ProductFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Product::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'product_name' => $this->faker->sentence(3),
+            'product_image_url' => $this->faker->imageUrl(),
+            'product_description' => $this->faker->paragraph,
+            'product_price' => $this->faker->randomFloat(2, 10, 1000),
+            'flag_id' => function () {
+                return Flag::factory()->create()->id;
+            },
+            'diet_id' => function () {
+                return Diet::factory()->create()->id;
+            },
+            'allergen_type' => function () {
+                return FoodAllergen::factory()->create()->allergen_type;
+            },
+            'status' => $this->faker->randomElement(['active', 'inactive']),
+        ];
+    }
+}

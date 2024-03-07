@@ -5,14 +5,16 @@ namespace Database\Seeders;
 use App\Models\Bill;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Factories\BillFactory;
+
+
 
 class BillSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+
     public function run(): void
     {
-        Bill::factory()->count(50)->create();
+        BillFactory::new()->count(10)->create();
+
     }
 }

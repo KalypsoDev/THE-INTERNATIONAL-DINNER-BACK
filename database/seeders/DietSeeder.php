@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Diet;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Seeder;
+use Database\Factories\DietFactory;
 
 class DietSeeder extends Seeder
 {
@@ -13,6 +14,7 @@ class DietSeeder extends Seeder
      */
     public function run(): void
     {
-        Diet::factory()->count(50)->create();
+        DietFactory::new()->count(10)->create();
+
     }
 }

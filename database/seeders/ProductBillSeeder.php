@@ -2,17 +2,15 @@
 
 namespace Database\Seeders;
 
-use App\Models\ProductBill;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Factories\ProductBillFactory;
+
 
 class ProductBillSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public function run()
     {
-        ProductBill::factory()->count(50)->create();
+        ProductBillFactory::factory()->count(10)->create();
     }
 }
+

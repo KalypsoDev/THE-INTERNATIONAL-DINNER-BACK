@@ -2,13 +2,19 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-
 use App\Models\Flag;
 use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Flag::class, function (Faker $faker) {
-    return [
-        'country_flag' => $faker->countryCode, 
-    ];
-});
+class FlagFactory extends Factory
+{
+    protected $model = Flag::class;
+
+    public function definition()
+    {
+        return [
+            'country_flag' => $this->faker->countryCode,
+            
+        ];
+    }
+}

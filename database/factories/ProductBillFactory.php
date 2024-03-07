@@ -1,26 +1,33 @@
 <?php
 
+
 namespace Database\Factories;
 
+use App\Models\ProductBill;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-use App\Models\ProductBill;
-use App\Models\Product;
-use App\Models\Bill;
-use App\Models\User;
-use Faker\Generator as Faker;
+class ProductBillFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = ProductBill::class;
 
-$factory->define(ProductBill::class, function (Faker $faker) {
-    return [
-        'product_id' => function () {
-            return User::factory(Product::class)->create()->id;
-        },
-        'bill_id' => function () {
-            return User::factory(Bill::class)->create()->id;
-        },
-        'sale_date' => $faker->dateTimeBetween('-1 year', 'now'),
-        'product_quantity' => $faker->numberBetween(1, 10),
-        'price' => $faker->randomFloat(2, 10, 1000),
-       
-    ];
-});
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'product_id' => $this->faker->randomNumber(),
+            'bill_id' => $this->faker->randomNumber(),
+            'sale_date' => $this->faker->dateTimeBetween('-1 year', 'now'),
+            'product_quantity' => $this->faker->numberBetween(1, 10),
+            'price' => $this->faker->randomFloat(2, 10, 1000),
+        ];
+    }
+}
