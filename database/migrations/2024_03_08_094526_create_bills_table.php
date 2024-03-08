@@ -17,9 +17,9 @@ return new class extends Migration
             $table->integer('units_quantity');
             $table->integer('total_sale_price');
             $table->string('status')->default('pending'); 
-            $table->timestamps();
-
+            
             $table->foreign('user_id')->references('id')->on('users');
+            $table->timestamps();
         });
     }
 

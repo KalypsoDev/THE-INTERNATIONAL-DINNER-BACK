@@ -20,9 +20,9 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->timestamps();
-
+            
             $table->foreign('role_id')->references('id')->on('roles');
+            $table->timestamps();
         });
     }
 

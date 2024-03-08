@@ -3,14 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 
 class Product extends Model
 {
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    use HasFactory;
+
+
     protected $fillable = [
         'product_name',
         'product_image_url',
@@ -21,6 +21,7 @@ class Product extends Model
         'allergen_type',
         'status',
     ];
+    // public $timestamps = false;
 
     /**
      * Get the flag that owns the product.

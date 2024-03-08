@@ -2,15 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class ProductBill extends Model
 {
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    use HasFactory;
+
     protected $fillable = [
         'product_id',
         'bill_id',
@@ -18,8 +16,7 @@ class ProductBill extends Model
         'product_quantity',
         'price',
     ];
-
-    //definir relaciones con otras tablas si es necesario
+    // public $timestamps = false;
 
     /**
      * Get the product associated with the product bill.

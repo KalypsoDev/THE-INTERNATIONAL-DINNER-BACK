@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('flags', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('country_flag');
-            
+            $table->timestamps();
         });
     }
 

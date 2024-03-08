@@ -21,13 +21,10 @@ return new class extends Migration
             $table->unsignedBigInteger('diet_id');
             $table->unsignedBigInteger('allergen_type');
             $table->string('status')->default('pending');
-
             $table->foreign('flag_id')->references('id')->on('flags');
             $table->foreign('diet_id')->references('id')->on('diets');
             $table->foreign('allergen_type')->references('id')->on('food_allergens');
-
             $table->timestamps();
-            
         });
     }
 

@@ -3,19 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Diet extends Model
 {
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    use HasFactory;
+
     protected $fillable = [
         'diet_type',
     ];
 
-    //definir relaciones con otras tablas si es necesario
+    // public $timestamps = false;
 
 }
-
