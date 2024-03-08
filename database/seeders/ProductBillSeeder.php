@@ -3,14 +3,14 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Database\Factories\ProductBillFactory;
+// use Database\Factories\ProductBillFactory;
+use App\Models\ProductBill;
 
 
 class ProductBillSeeder extends Seeder
 {
     public function run()
     {
-        ProductBillFactory::factory()->count(10)->create();
+        ProductBill::factory()->count(10)->create();
     }
 }
-

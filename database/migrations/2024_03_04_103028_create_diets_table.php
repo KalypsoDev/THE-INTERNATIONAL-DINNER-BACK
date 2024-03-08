@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('diets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('diet_type');
+            $table->timestamps();
         });
     }
 

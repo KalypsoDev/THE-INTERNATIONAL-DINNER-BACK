@@ -23,8 +23,8 @@ class ProductBillFactory extends Factory
     public function definition()
     {
         return [
-            'product_id' => $this->faker->randomNumber(),
-            'bill_id' => $this->faker->randomNumber(),
+            'product_id' => $this->faker->numberBetween(1, 10),
+            'bill_id' => $this->faker->numberBetween(1, 10),
             'sale_date' => $this->faker->dateTimeBetween('-1 year', 'now'),
             'product_quantity' => $this->faker->numberBetween(1, 10),
             'price' => $this->faker->randomFloat(2, 10, 1000),

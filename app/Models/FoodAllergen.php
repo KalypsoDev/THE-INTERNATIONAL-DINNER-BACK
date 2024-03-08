@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class FoodAllergen extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'allergen_type',
     ];
 
-    public $timestamps = false;
+    // public $timestamps = false;
 
 }

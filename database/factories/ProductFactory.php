@@ -36,7 +36,7 @@ class ProductFactory extends Factory
                 return Diet::factory()->create()->id;
             },
             'allergen_type' => function () {
-                return FoodAllergen::factory()->create()->allergen_type;
+                return FoodAllergen::factory()->create()->id;
             },
             'status' => $this->faker->randomElement(['active', 'inactive']),
         ];

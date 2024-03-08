@@ -15,7 +15,7 @@ class Bill extends Model
         'total_sale_price',
         'status',
     ];
-    public $timestamps = false;
+    // public $timestamps = false;
 
     //definir relaciones con otras tablas si es necesario
 

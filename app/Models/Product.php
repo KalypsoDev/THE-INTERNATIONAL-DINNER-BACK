@@ -21,7 +21,7 @@ class Product extends Model
         'allergen_type',
         'status',
     ];
-    public $timestamps = false;
+    // public $timestamps = false;
 
     /**
      * Get the flag that owns the product.

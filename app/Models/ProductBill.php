@@ -16,7 +16,7 @@ class ProductBill extends Model
         'product_quantity',
         'price',
     ];
-    public $timestamps = false;
+    // public $timestamps = false;
 
     /**
      * Get the product associated with the product bill.
