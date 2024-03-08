@@ -13,8 +13,8 @@ class FoodAllergenFactory extends Factory
     public function definition()
     {
         return [
-            'allergen_type' => $this->faker->word,
-            
+            'allergen_type' => $this->faker->text,
+
         ];
     }
 }

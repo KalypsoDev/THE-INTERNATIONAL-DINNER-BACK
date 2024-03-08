@@ -15,6 +15,7 @@ class Bill extends Model
         'total_sale_price',
         'status',
     ];
+    public $timestamps = false;
 
     //definir relaciones con otras tablas si es necesario
 
@@ -26,4 +27,3 @@ class Bill extends Model
         return $this->belongsTo(User::class);
     }
 }
-

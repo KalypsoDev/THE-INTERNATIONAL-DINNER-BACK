@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('food_allergens', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('allergen_type');
+            $table->text('allergen_type');
         });
     }
 

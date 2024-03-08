@@ -25,9 +25,6 @@ return new class extends Migration
             $table->foreign('flag_id')->references('id')->on('flags');
             $table->foreign('diet_id')->references('id')->on('diets');
             $table->foreign('allergen_type')->references('id')->on('food_allergens');
-
-            $table->timestamps();
-            
         });
     }
 
